@@ -1,0 +1,16 @@
+C:\Users\Administrator\source\repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.exe
+C:\Users\Administrator\source\repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.deps.json
+C:\Users\Administrator\source\repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.runtimeconfig.json
+C:\Users\Administrator\source\repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.dll
+C:\Users\Administrator\source\repos\MACEnumerator\bin\Debug\net6.0\ref\MACEnumerator.dll
+C:\Users\Administrator\source\repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.pdb
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.GlobalUsings.g.cs
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.dll
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\ref\MACEnumerator.dll
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.pdb
+C:\Users\Administrator\source\repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.genruntimeconfig.cache
