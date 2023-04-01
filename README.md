@@ -1,9 +1,5 @@
 # MACEnumerator
 
-small programm that gets all possible combinations of a given char set and desired amount of digits
-
-to change char set or amount of digits:
-go to main method and change char[] set1 for your char set and int k for your amount of digits
-
-
-All possible combos will be written to mac.txt in debug folder
+small programm to get all possible permutations of a set char[] set. 
+The amout of k permutations is set by the user.
+the output of all possiblities is written to mac.txt file
