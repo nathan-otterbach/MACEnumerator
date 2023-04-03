@@ -1,86 +1,96 @@
-﻿using System.Runtime.InteropServices;
-using System.Text;
+﻿using System;
+using System.Collections.Concurrent;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace MACEnumerator
 {
     class Program
     {
-        static unsafe void printAllKLength(char[] set, int k, StreamWriter writer)
-        {
-            int n = set.Length;
-
-            // create a lookup table to find the index of each character in the set
-            int* lookupTable = (int*)Marshal.AllocHGlobal(n * sizeof(int));
-            for (int i = 0; i < n; i++)
-            {
-                lookupTable[set[i]] = i;
-            }
-
-            // create an array to store the prefix string
-            char[] prefix = new char[k];
-            for (int i = 0; i < k; i++)
-            {
-                prefix[i] = set[0];
-            }
-
-            // generate all combinations of k-length
-            while (true)
-            {
-                writer.WriteLine(prefix);
-
-                int i = k - 1;
-                while (i >= 0 && prefix[i] == set[n - 1])
-                {
-                    i--;
-                }
-
-                if (i < 0)
-                {
-                    break;
-                }
-
-                prefix[i] = set[lookupTable[prefix[i]] + 1];
-
-                for (int j = i + 1; j < k; j++)
-                {
-                    prefix[j] = set[0];
-                }
-            }
-
-            // free the memory used by the lookup table
-            Marshal.FreeHGlobal((IntPtr)lookupTable);
-        }
-
         static void Main()
         {
-            char[] set1 = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            string charSet;
+            do
+            {
+                // Prompt the user to enter the character set
+                Console.Write("Enter the character set: ");
+                charSet = Console.ReadLine();
+                if (string.IsNullOrEmpty(charSet))
+                {
+                    Console.WriteLine("Invalid character set. Please enter at least one character.");
+                }
+            } while (string.IsNullOrEmpty(charSet));
+
+            // Prompt the user to enter the value of k
             int k;
+            do
+            {
+                Console.Write("Enter the value of k (must be between 1 and {0}): ", charSet.Length);
+                k = int.Parse(Console.ReadLine());
+                if (k < 1 || k > charSet.Length)
+                {
+                    Console.WriteLine("Invalid value of k. Please enter a value between 1 and {0}.", charSet.Length);
+                }
+            } while (k < 1 || k > charSet.Length);
+
+            // Initialize variables for timing
             DateTime startTime, endTime;
 
-            while (true)
-            {
-                Console.Write("Enter the value of k (between 1 and {0}): ", set1.Length);
-                string? input = Console.ReadLine();
-                if (int.TryParse(input, out k) && k >= 1 && k <= set1.Length)
-                {
-                    break;
-                }
-                Console.WriteLine("Invalid input. Please enter a number between 1 and {0}", set1.Length);
-            }
+            // Create a concurrent queue to store the combinations
+            var combinations = new ConcurrentQueue<string>();
 
+            // Start timing
             startTime = DateTime.Now;
 
-            using (var writer = new StreamWriter("mac.txt", false, Encoding.ASCII, 65536)) // set the buffer size to 64KB
+            // Generate all combinations of k-length in parallel
+            Parallel.ForEach(Combinations(charSet, k), combination =>
             {
-                printAllKLength(set1, k, writer);
+                combinations.Enqueue(combination);
+            });
+
+            // Write the combinations to the file using a StreamWriter with a large buffer size
+            using (var writer = new StreamWriter("mac.txt", false, System.Text.Encoding.UTF8, 1048576))
+            {
+                foreach (var combination in combinations)
+                {
+                    writer.WriteLine(combination);
+                }
             }
 
+            // End timing
             endTime = DateTime.Now;
-            Console.WriteLine("Time taken: {0} seconds", (endTime - startTime).TotalSeconds);
+
+            Console.WriteLine("Combinations generated in {0} seconds", (endTime - startTime).TotalSeconds);
 
             // Wait for user input before closing the console
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+        }
+
+        static IEnumerable<string> Combinations(string charSet, int k)
+        {
+            int n = charSet.Length;
+            int[] indices = new int[k];
+            for (int i = 0; i < k; i++)
+            {
+                indices[i] = i;
+            }
+
+            while (indices[0] <= n - k)
+            {
+                yield return new string(indices.Select(i => charSet[i]).ToArray());
+
+                int t = k - 1;
+                while (t != 0 && indices[t] == n - k + t)
+                {
+                    t--;
+                }
+                indices[t]++;
+                for (int j = t + 1; j < k; j++)
+                {
+                    indices[j] = indices[j - 1] + 1;
+                }
+            }
         }
     }
 }

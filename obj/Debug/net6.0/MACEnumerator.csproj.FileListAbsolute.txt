@@ -19,13 +19,13 @@ C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.Generat
 C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.AssemblyInfoInputs.cache
 C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.AssemblyInfo.cs
 C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.csproj.CoreCompileInputs.cache
-C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.dll
-C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.pdb
 C:\Users\nathi\Source\Repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.exe
 C:\Users\nathi\Source\Repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.deps.json
 C:\Users\nathi\Source\Repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.runtimeconfig.json
 C:\Users\nathi\Source\Repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.dll
 C:\Users\nathi\Source\Repos\MACEnumerator\bin\Debug\net6.0\MACEnumerator.pdb
+C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.dll
 C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\refint\MACEnumerator.dll
+C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.pdb
 C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\MACEnumerator.genruntimeconfig.cache
 C:\Users\nathi\Source\Repos\MACEnumerator\obj\Debug\net6.0\ref\MACEnumerator.dll
