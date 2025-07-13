@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MACEnumerator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+196cbd36e6cfac4c4c6550c13644b151eb1f0578")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89b57e572fe534b4827ef7b75093b8c187e691f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("MACEnumerator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MACEnumerator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
